@@ -1,1 +1,7 @@
 # depslib dependency file v1.0
+1588196877 source:c:\users\danil\documents\projects\programiranje\github\(c++)leagueoflegends-project\onomojeligalegendi\dinstring.cpp
+	"dinstring.hpp"
+
+1588196805 c:\users\danil\documents\projects\programiranje\github\(c++)leagueoflegends-project\onomojeligalegendi\dinstring.hpp
+	<iostream>
+

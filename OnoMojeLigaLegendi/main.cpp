@@ -1,11 +1,10 @@
 #include <iostream>
+#include "dinstring.hpp"
+#include "list.hpp"
 using namespace std;
+
 enum ItemType      {VISION, CONSUMABLE, MOVEMENT, MANA, MANA_REGEN, AP, CDR, MAGIC_PEN, DMG, CRIT, AS, LS, ARMOR_PEN, HEALTH, HEALTH_REGEN, MR, ARMOR};
 enum AbilityType   {PASSIVE, DAMAGE, HEAL, CC, MODE_SWAP, SHIELD, DASH};
-enum SkinRarity    {COMMON, RARE, EPIC, LEGENDARY, ULTIMATE, MYTHIC};
-enum Runetera      {PILTOVER, DEMACIA, NOXUS, IONIA, FRELJORD, TARGON, SHURIMA, IXTAL, ZAUN, BILGEWATER, SHADOW_ISLES};
-enum Lane          {TOP, JUNGLE, MID, ADC, SUPP};
-enum Playstyle     {ASSASIN, MAGE, TANK, FIGHTER, SUPPORT, MARKSMAN};
 enum PlayFrequency {NEVER, ONCE_MONTH, ONCE_WEEK, ONCE_DAY, PREMADE, RANKED_PREMADE};
 enum Division      {IRON, BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER, GRANDMASTER, CHALLENGER};
 enum ClubRank      {MEMBER, OFFICER, OWNER};
@@ -15,18 +14,18 @@ enum RuneType      {SORCERY, DOMINATION, INSPIRATION, RESOLVE, PRECISION};
 class Map
 {
 private:
-    char * naziv;
+    DinString name;
     int players;
     int numLanes;
     int numObjectives;
-    Lane * lanes;
+    DinString * lanes;
 };
 
 class Item
 {
 private:
     Map gamemode;
-    char * name;
+    DinString name;
     ItemType type;
     bool active;
     int price;
@@ -35,7 +34,7 @@ private:
 class SummonerSpell
 {
 private:
-    char * name;
+    DinString name;
     char key; /// (D ili F)
     int cooldown;
 };
@@ -43,8 +42,16 @@ private:
 class Role
 {
 private:
-    Playstyle playstyle;
-    Lane lane;
+    DinString Playstyle[6]
+    {
+        "ASSASIN", "MAGE", "TANK", "FIGHTER", "SUPPORT", "MARKSMAN"
+    };
+    DinString playstyle;
+    DinString Lane[5]
+    {
+        "TOP", "JUNGLE", "MID", "ADC", "SUPP"
+    };
+    DinString lane;
 public:
     bool swapLane();
 };
@@ -54,7 +61,7 @@ class Primary
 private:
     RuneType type;
     int Fields[3];
-    char * runa;
+    DinString runa;
 };
 
 class Secondary
@@ -74,7 +81,7 @@ private:
 class Ability
 {
 private:
-    char * name;
+    DinString name;
     int cooldown, manaCost;
     char key; ///(Q, W, E, R ili P za passive)
     AbilityType type;
@@ -83,9 +90,13 @@ private:
 class Skin
 {
 private:
-    char * name;
+    DinString name;
     int price;
-    SkinRarity rarity;
+    DinString SkinRarity[6]
+    {
+        "COMMON", "RARE", "EPIC", "LEGENDARY", "ULTIMATE", "MYTHIC"
+    };
+    DinString skinRarity;
     bool legacy;
 };
 
@@ -103,14 +114,32 @@ protected:
 class Champion : public ChampionStats
 {
 private:
-    char * name;
+    const DinString Runetera[11]
+    {
+        "PILTOVER", "DEMACIA", "NOXUS", "IONIA", "FRELJORD", "TARGON", "SHURIMA", "IXTAL", "ZAUN", "BILGEWATER", "SHADOW_ISLES"
+    };
+    DinString runetera;
+    DinString name;
     int cenaBE, cenaRP; ///odredjene vrednosti
-    Runetera origin;
     Role role;
-    Ability abilities[5];
-    Skin * skins;
+    Ability * abilities = (Ability*)malloc(sizeof(Ability) * 5);
+    List<Skin> skins;
 public:
-    bool dodajSkin();
+    /// u mainu napraviti niz Abilities, Champion(..., &Abilities)
+    Champion(DinString Name, int CenaBE, int CenaRP, int indexRunetera, Role Role, Ability * Abilities, List<Skin> &Skins)
+    {
+        name = Name;
+        cenaBE = CenaBE;
+        cenaRP = CenaRP;
+        runetera = Runetera[indexRunetera];
+        role = Role;
+        abilities = Abilities;
+        skins = Skins;
+    }
+    void dodajSkin(Skin &skin)
+    {
+        skins.add(skins.size() + 1, skin);
+    }
     bool buff();
     bool nerf();
 };
@@ -119,7 +148,7 @@ class GameStats
 {
 private:
     bool win;
-    float kda;
+    int kda[3];
     float csPerMin;
     int gold;
 };
@@ -132,7 +161,7 @@ private:
     int points;
     float winrate;
     GameStats avgstats;
-    GameStats * stats;
+    List<GameStats> stats;
 public:
     bool upgradeLevel();
     bool playGame(); /// +1 na listu, novi prosek, +1000 poena if win
@@ -159,7 +188,7 @@ public:
 class Friend
 {
 private:
-    char * summName;
+    DinString summName;
     PlayFrequency freq;
     bool sameClub;
 public:
@@ -169,8 +198,8 @@ public:
 class PromoteDemoteSystem
 {
 public:
-    virtual bool promote();
-    virtual bool demote();
+    virtual bool promote() = 0;
+    virtual bool demote() = 0;
 };
 
 class Ranked : public PromoteDemoteSystem
@@ -186,8 +215,8 @@ public:
 class Club : public PromoteDemoteSystem
 {
 private:
-    char * name;
-    char tag[5];
+    DinString name;
+    DinString tag;
     int numMembers;
     ClubRank role;
 public:
@@ -198,9 +227,9 @@ public:
 class LoginInfo
 {
 protected:
-    char * username;
-    char * password;
-    char * language;
+    DinString username;
+    DinString password;
+    DinString language;
     Server server;
 public:
     bool passwordStrength;
@@ -209,7 +238,7 @@ public:
 class Summoner : public LoginInfo
 {
 private:
-    char * summName;
+    DinString summName;
     int summLevel;
     int ownedChamps;
     int honorLevel; ///(1 - 5)
