@@ -1,9 +1,7 @@
-#ifndef ITEM_DEF
-#define ITEM_DEF
-#include <iostream>
-#include "Map.h"
+#ifndef ITEM_HPP_INCLUDED
+#define ITEM_HPP_INCLUDED
+#include "Map.hpp"
 #include "dinstring.hpp"
-using namespace std;
 
 enum ItemType
 {
@@ -29,14 +27,9 @@ public:
         active = a;
         price = p;
     }
-    Item(const Item &i) : gamemode(i.gamemode.name, i.gamemode.numPlayers, i.gamemode.lanes)
-    {
-        name = i.name;
-        type = i.type;
-        active = i.active;
-        price = i.price;
-    }
+
     ~Item(){}
 };
 
-#endif
+
+#endif // ITEM_HPP_INCLUDED

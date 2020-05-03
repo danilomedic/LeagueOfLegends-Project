@@ -1,7 +1,5 @@
-#ifndef GAMESTATS_DEF
-#define GAMESTATS_DEF
-#include <iostream>
-using namespace std;
+#ifndef GAMESTATS_HPP_INCLUDED
+#define GAMESTATS_HPP_INCLUDED
 
 class GameStats
 {
@@ -12,4 +10,4 @@ private:
     int gold;
 };
 
-#endif
+#endif // GAMESTATS_HPP_INCLUDED

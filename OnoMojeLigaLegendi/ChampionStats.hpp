@@ -1,7 +1,5 @@
-#ifndef CHAMPIONSTATS_DEF
-#define CHAMPIONSTATS_DEF
-#include <iostream>
-using namespace std;
+#ifndef CHAMPIONSTATS_HPP_INCLUDED
+#define CHAMPIONSTATS_HPP_INCLUDED
 
 class ChampionStats
 {
@@ -14,4 +12,4 @@ protected:
     float attackSpeed;
 };
 
-#endif
+#endif // CHAMPIONSTATS_HPP_INCLUDED

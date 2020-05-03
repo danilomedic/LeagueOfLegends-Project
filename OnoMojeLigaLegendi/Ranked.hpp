@@ -1,9 +1,7 @@
-#ifndef RANKED_DEF
-#define RANKED_DEF
-#include <iostream>
+#ifndef RANKED_HPP_INCLUDED
+#define RANKED_HPP_INCLUDED
 #include "dinstring.hpp"
-#include "PromoteDemoteSystem.h"
-using namespace std;
+#include "PromoteDemoteSystem.hpp"
 
 enum Division{IRON, BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER, GRANDMASTER, CHALLENGER};
 
@@ -17,4 +15,4 @@ public:
     bool demote();
 };
 
-#endif
+#endif // RANKED_HPP_INCLUDED

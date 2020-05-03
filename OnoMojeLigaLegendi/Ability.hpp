@@ -1,8 +1,6 @@
-#ifndef ABILIY_DEF
-#define ABILITY_DEF
-#include <iostream>
+#ifndef ABILITY_HPP_INCLUDED
+#define ABILITY_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 enum AbilityType   {PASSIVE, DAMAGE, HEAL, CC, MODE_SWAP, SHIELD, DASH};
 
@@ -15,4 +13,4 @@ private:
     AbilityType type;
 };
 
-#endif // ABILIY_DEF
+#endif // ABILITY_HPP_INCLUDED

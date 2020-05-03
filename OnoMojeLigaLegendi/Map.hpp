@@ -1,13 +1,11 @@
-#ifndef MAP_DEF
-#define MAP_DEF
-#include <iostream>
+#ifndef MAP_HPP_INCLUDED
+#define MAP_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 class Map
 {
 private:
-s    DinString name;
+    DinString name;
     int numPlayers;
     List<DinString> lanes;
 public:
@@ -27,4 +25,4 @@ public:
     ~Map(){}
 };
 
-#endif
+#endif // MAP_HPP_INCLUDED

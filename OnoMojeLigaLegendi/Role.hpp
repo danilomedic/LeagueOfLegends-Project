@@ -1,8 +1,6 @@
-#ifndef ROLE_DEF
-#define ROLE_DEF
-#include <iostream>
+#ifndef ROLE_HPP_INCLUDED
+#define ROLE_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 class Role
 {
@@ -21,4 +19,4 @@ public:
     bool swapLane();
 };
 
-#endif
+#endif // ROLE_HPP_INCLUDED

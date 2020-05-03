@@ -1,8 +1,6 @@
-#ifndef SKIN_DEF
-#define SKIN_DEF
-#include <iostream>
+#ifndef SKIN_HPP_INCLUDED
+#define SKIN_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 class Skin
 {
@@ -17,4 +15,4 @@ private:
     bool legacy;
 };
 
-#endif
+#endif // SKIN_HPP_INCLUDED

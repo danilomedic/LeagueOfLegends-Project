@@ -1,8 +1,6 @@
-#ifndef FRIEND_DEF
-#define FRIEND_DEF
-#include <iostream>
+#ifndef FRIEND_HPP_INCLUDED
+#define FRIEND_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 enum PlayFrequency{NEVER, ONCE_MONTH, ONCE_WEEK, ONCE_DAY, PREMADE, RANKED_PREMADE};
 
@@ -16,4 +14,4 @@ public:
     bool playMoreOften();
 };
 
-#endif
+#endif // FRIEND_HPP_INCLUDED

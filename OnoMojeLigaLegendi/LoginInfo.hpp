@@ -1,8 +1,6 @@
-#ifndef LOGININFO_DEF
-#define LOGININFO_DEF
-#include <iostream>
+#ifndef LOGININFO_HPP_INCLUDED
+#define LOGININFO_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 enum Server{EUNE, EUWEST, NA, BRAZIL, TURKEY, LATIN_AMERICA, OCEANIA, RUSSIA, JAPAN, KOREA};
 
@@ -17,4 +15,4 @@ public:
     bool passwordStrength;
 };
 
-#endif
+#endif // LOGININFO_HPP_INCLUDED

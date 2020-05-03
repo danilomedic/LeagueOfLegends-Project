@@ -1,9 +1,7 @@
-#ifndef CLUB_DEF
-#define CLUB_DEF
-#include <iostream>
+#ifndef CLUB_HPP_INCLUDED
+#define CLUB_HPP_INCLUDED
 #include "dinstring.hpp"
-#include "PromoteDemoteSystem.h"
-using namespace std;
+#include "PromoteDemoteSystem.hpp"
 
 enum ClubRank{MEMBER, OFFICER, OWNER};
 
@@ -19,5 +17,4 @@ public:
     bool demote();
 };
 
-
-#endif
+#endif // CLUB_HPP_INCLUDED

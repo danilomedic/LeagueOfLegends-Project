@@ -1,10 +1,8 @@
-#ifndef MASTERY_DEF
-#define MASTERY_DEF
-#include <iostream>
+#ifndef MASTERY_HPP_INCLUDED
+#define MASTERY_HPP_INCLUDED
 #include "list.hpp"
-#include "Champion.h"
-#include "GameStats.h"
-using namespace std;
+#include "Champion.hpp"
+#include "GameStats.hpp"
 
 class Mastery
 {
@@ -20,4 +18,4 @@ public:
     bool playGame(); /// +1 na listu, novi prosek, +1000 poena if win
 };
 
-#endif
+#endif // MASTERY_HPP_INCLUDED

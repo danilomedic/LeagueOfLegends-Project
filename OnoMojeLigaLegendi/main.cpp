@@ -1,11 +1,11 @@
 #include <iostream>
 #include "dinstring.hpp"
 #include "list.hpp"
-#include "Map.h"
-#include "Item.h"
-#include "SummonerSpell.h"
-#include "Summoner.h"
-#include "Champion.h"
+#include "Map.hpp"
+#include "Item.hpp"
+#include "SummonerSpell.hpp"
+#include "Summoner.hpp"
+#include "Champion.hpp"
 using namespace std;
 
 int main()

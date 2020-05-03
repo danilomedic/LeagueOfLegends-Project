@@ -1,8 +1,6 @@
-#ifndef RUNES_DEF
-#define RUNES_DEF
-#include <iostream>
+#ifndef RUNES_HPP_INCLUDED
+#define RUNES_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 enum RuneType
 {
@@ -51,4 +49,4 @@ public:
     ~RunePage(){}
 };
 
-#endif
+#endif // RUNES_HPP_INCLUDED

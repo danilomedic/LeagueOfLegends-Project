@@ -1,8 +1,6 @@
-#ifndef SUMMONERSPELL_DEF
-#define SUMMONERSPELL_DEF
-#include <iostream>
+#ifndef SUMMONERSPELL_HPP_INCLUDED
+#define SUMMONERSPELL_HPP_INCLUDED
 #include "dinstring.hpp"
-using namespace std;
 
 class SummonerSpell
 {
@@ -13,4 +11,4 @@ private:
 };
 
 
-#endif // SUMMONERSPELL_DEF
+#endif // SUMMONERSPELL_HPP_INCLUDED

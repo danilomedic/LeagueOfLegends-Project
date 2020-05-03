@@ -1,7 +1,5 @@
-#ifndef CRAFTING_DEF
-#define CRAFTING_DEF
-#include <iostream>
-using namespace std;
+#ifndef CRAFTING_HPP_INCLUDED
+#define CRAFTING_HPP_INCLUDED
 
 class Crafting
 {
@@ -13,4 +11,4 @@ public:
     bool forgeKey();
 };
 
-#endif
+#endif // CRAFTING_HPP_INCLUDED

@@ -1,18 +1,16 @@
-#ifndef SUMMONER_DEF
-#define SUMMONER_DEF
-#include <iostream>
+#ifndef SUMMONER_HPP_INCLUDED
+#define SUMMONER_HPP_INCLUDED
 #include "dinstring.hpp"
 #include "list.hpp"
-#include "Role.h"
-#include "Mastery.h"
-#include "Runes.h"
-#include "LoginInfo.h"
-#include "Club.h"
-#include "Ranked.h"
-#include "Friend.h"
-#include "Currencies.h"
-#include "Crafting.h"
-using namespace std;
+#include "Role.hpp"
+#include "Mastery.hpp"
+#include "Runes.hpp"
+#include "LoginInfo.hpp"
+#include "Club.hpp"
+#include "Ranked.hpp"
+#include "Friend.hpp"
+#include "Currencies.hpp"
+#include "Crafting.hpp"
 
 class Summoner : public LoginInfo
 {
@@ -40,4 +38,4 @@ public:
     bool buyChampion();
 };
 
-#endif
+#endif // SUMMONER_HPP_INCLUDED

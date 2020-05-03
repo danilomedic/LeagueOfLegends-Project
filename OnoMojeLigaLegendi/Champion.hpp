@@ -1,12 +1,11 @@
-#ifndef CHAMPION_DEF
-#define CHAMPION_DEF
+#ifndef CHAMPION_HPP_INCLUDED
+#define CHAMPION_HPP_INCLUDED
 #include "dinstring.hpp"
 #include "list.hpp"
-#include "ChampionStats.h"
-#include "Ability.h"
-#include "Skin.h"
-#include "Role.h"
-using namespace std;
+#include "ChampionStats.hpp"
+#include "Ability.hpp"
+#include "Skin.hpp"
+#include "Role.hpp"
 
 class Champion : public ChampionStats
 {
@@ -42,4 +41,4 @@ public:
     bool nerf();
 };
 
-#endif
+#endif // CHAMPION_HPP_INCLUDED
