@@ -1,9 +1,7 @@
 #ifndef LIST_DEF
 #define LIST_DEF
-
 #include <stdlib.h>
 #include <iostream>
-
 using namespace std;
 
 template <class T>
@@ -41,7 +39,6 @@ class List{
 
 		void clear();
 };
-
 
 template <class T>
 ostream& operator<<(ostream& out, const List<T>& rl) {

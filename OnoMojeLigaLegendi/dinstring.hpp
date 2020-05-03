@@ -1,7 +1,6 @@
 #ifndef DINSTRING_DEF
 #define DINSTRING_DEF
 #include <iostream>
-
 using namespace std;
 
 class DinString {
