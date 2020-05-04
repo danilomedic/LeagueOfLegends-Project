@@ -35,6 +35,10 @@ int DinString::length() const {
     return duzina;
 }
 
+char * DinString::getText() const {
+    return text;
+}
+
 char& DinString::operator[] (int i) {
     return text[i];
 }

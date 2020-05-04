@@ -8,6 +8,30 @@ private:
     DinString name;
     char key; /// (D ili F)
     int cooldown;
+public:
+    SummonerSpell(){}
+    SummonerSpell(DinString n, char k, int cd)
+    {
+        if(k != 'F' && k != 'D')
+            return;
+        key = k;
+        name = n;
+        cooldown = cd;
+    }
+    SummonerSpell(SummonerSpell &s)
+    {
+        key = s.key;
+        name = s.name;
+        cooldown = s.cooldown;
+    }
+    ~SummonerSpell(){}
+    void sawpBiding()
+    {
+        if(key == 'D')
+            key = 'F';
+        if(key == 'F')
+            key = 'D';
+    }
 };
 
 

@@ -14,6 +14,7 @@ class DinString {
         ~DinString();
 
         int length() const;
+        char * getText() const;
 
         char& operator[] (int);
         char operator[] (int) const;

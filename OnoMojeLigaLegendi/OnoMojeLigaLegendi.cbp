@@ -32,6 +32,25 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Ability.hpp" />
+		<Unit filename="Champion.hpp" />
+		<Unit filename="ChampionStats.hpp" />
+		<Unit filename="Club.hpp" />
+		<Unit filename="Crafting.hpp" />
+		<Unit filename="Currencies.hpp" />
+		<Unit filename="Friend.hpp" />
+		<Unit filename="GameStats.hpp" />
+		<Unit filename="Item.hpp" />
+		<Unit filename="LoginInfo.hpp" />
+		<Unit filename="Map.hpp" />
+		<Unit filename="Mastery.hpp" />
+		<Unit filename="PromoteDemoteSystem.hpp" />
+		<Unit filename="Ranked.hpp" />
+		<Unit filename="Role.hpp" />
+		<Unit filename="Runes.hpp" />
+		<Unit filename="Skin.hpp" />
+		<Unit filename="Summoner.hpp" />
+		<Unit filename="SummonerSpell.hpp" />
 		<Unit filename="dinstring.cpp" />
 		<Unit filename="dinstring.hpp" />
 		<Unit filename="list.hpp" />

@@ -13,6 +13,23 @@ private:
     };
     DinString skinRarity;
     bool legacy;
+public:
+    Skin(){}
+    Skin(DinString n, int p, int index, bool l)
+    {
+        name = n;
+        price = p;
+        skinRarity = SkinRarity[index];
+        legacy = l;
+    }
+    Skin(Skin &s)
+    {
+        name = s.name;
+        price = s.price;
+        skinRarity = s.skinRarity;
+        legacy = s.legacy;
+    }
+    ~Skin(){}
 };
 
 #endif // SKIN_HPP_INCLUDED
