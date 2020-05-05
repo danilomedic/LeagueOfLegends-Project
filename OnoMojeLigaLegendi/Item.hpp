@@ -19,7 +19,7 @@ private:
     bool active;
     int price;
 public:
-    Item(){}
+    Item() {}
     Item(DinString name, int num, List<DinString> l, DinString n, ItemType t, bool a, int p) : gamemode(name, num, l)
     {
         name = n;
@@ -27,7 +27,13 @@ public:
         active = a;
         price = p;
     }
-
+    Item(const Item &i) : gamemode(i.gamemode)
+    {
+        name = i.name;
+        type = i.type;
+        active = i.active;
+        price = i.price;
+    }
     ~Item(){}
 };
 

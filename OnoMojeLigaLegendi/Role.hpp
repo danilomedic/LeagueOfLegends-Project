@@ -16,6 +16,18 @@ private:
     };
     DinString lane;
 public:
+    Role(){}
+    Role(int indexP, int indexL)
+    {
+        playstyle = Playstyle[indexP];
+        lane = Lane[indexL];
+    }
+    Role(const Role &r)
+    {
+        playstyle = r.playstyle;
+        lane = r.lane;
+    }
+    ~Role(){}
     bool swapLane();
 };
 

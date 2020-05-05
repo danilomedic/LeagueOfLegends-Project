@@ -20,7 +20,7 @@ public:
         language = l;
         server = s;
     }
-    LoginInfo(LoginInfo &li)
+    LoginInfo(const LoginInfo &li)
     {
         username = li.username;
         password = li.password;

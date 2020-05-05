@@ -17,29 +17,47 @@ private:
     };
     DinString runetera;
     DinString name;
-    int cenaBE, cenaRP; ///odredjene vrednosti
+    int cenaBE, cenaRP;
     Role role;
     List<Ability> abilities;
     List<Skin> skins;
 public:
     Champion(){}
-    Champion(DinString Name, int CenaBE, int CenaRP, int indexRunetera, Role Role, List<Ability> Abilities, List<Skin> &Skins)
+    Champion(DinString Name, int CenaBE, int CenaRP, int indexRunetera, Role Role, List<Ability> Abilities, List<Skin> &Skins, int ms, int arm, int mr, int ap, int ad, int hp, int m, int cdr, int cch, float as) : role(Role)
     {
+        movementSpeed = ms;
+        armor = arm;
+        magicResist = mr;
+        AP = ap;
+        AD = ad;
+        health = hp;
+        mana = m;
+        cooldownReduction = cdr;
+        critChance = cch;
+        attackSpeed = as;
         name = Name;
         cenaBE = CenaBE;
         cenaRP = CenaRP;
         runetera = Runetera[indexRunetera];
-        role = Role;
         abilities = Abilities;
         skins = Skins;
     }
-    Champion(Champion &c)
+    Champion(const Champion &c) : role(c.role)
     {
+        movementSpeed = c.movementSpeed;
+        armor = c.armor;
+        magicResist = c.magicResist;
+        AP = c.AP;
+        AD = c.AD;
+        health = c.health;
+        mana = c.mana;
+        cooldownReduction = c.cooldownReduction;
+        critChance = c.critChance;
+        attackSpeed = c.attackSpeed;
         name = c.name;
         cenaBE = c.cenaBE;
         cenaRP = c.cenaRP;
         runetera = c.runetera;
-        role = c.role;
         abilities = c.abilities;
         skins = c.skins;
     }

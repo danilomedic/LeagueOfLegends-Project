@@ -11,7 +11,32 @@ private:
     PlayFrequency freq;
     bool sameClub;
 public:
-    bool playMoreOften();
+    Friend(){}
+    Friend(DinString sN, PlayFrequency f, bool sC)
+    {
+        summName = sN;
+        freq = f;
+        sameClub = sC;
+    }
+    Friend(const Friend &f)
+    {
+        summName = f.summName;
+        freq = f.freq;
+        sameClub = f.sameClub;
+    }
+    ~Friend(){}
+    void playMoreOften()
+    {
+        if(freq != RANKED_PREMADE)
+        {
+            int freqCon = (int)freq;
+            freqCon++;
+            freq = (PlayFrequency)freqCon;
+        }
+        else
+            cout << "Nije moguce igrati vise, nadji zivot!" << endl;
+    }
+
 };
 
 #endif // FRIEND_HPP_INCLUDED

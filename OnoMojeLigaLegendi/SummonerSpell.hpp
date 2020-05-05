@@ -18,14 +18,14 @@ public:
         name = n;
         cooldown = cd;
     }
-    SummonerSpell(SummonerSpell &s)
+    SummonerSpell(const SummonerSpell &s)
     {
         key = s.key;
         name = s.name;
         cooldown = s.cooldown;
     }
     ~SummonerSpell(){}
-    void sawpBiding()
+    void swapBiding()
     {
         if(key == 'D')
             key = 'F';

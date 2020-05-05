@@ -23,7 +23,7 @@ public:
         key = k;
         type = t;
     }
-    Ability(Ability &a)
+    Ability(const Ability &a)
     {
         name = a.name;
         cooldown = a.cooldown;

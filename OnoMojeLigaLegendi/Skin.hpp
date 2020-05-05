@@ -22,7 +22,7 @@ public:
         skinRarity = SkinRarity[index];
         legacy = l;
     }
-    Skin(Skin &s)
+    Skin(const Skin &s)
     {
         name = s.name;
         price = s.price;

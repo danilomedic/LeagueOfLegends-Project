@@ -26,16 +26,26 @@ private:
     Ranked soloduo;
     Club clubs[3];
     Mastery favChamps[3];
-    Friend * friendList;
-    RunePage * runePages;
+    List<Friend> friendList;
+    List<RunePage> runes;
 public:
-    bool levelUp();
-    bool beHonored();///honorLevel++
-    bool flame(); ///honorLevel--, ban if 0
-    bool addCLub();
-    bool addFriend();
-    bool addRunePage();
-    bool buyChampion();
+    Summoner(){}
+    Summoner(int a)
+    {
+
+    }
+    Summoner(const Summoner &s)
+    {
+
+    }
+    ~Summoner(){}
+    void levelUp();
+    void beHonored();///honorLevel++
+    void flame(); ///honorLevel--, ban if 0
+    void addCLub();
+    void addFriend();
+    void addRunePage();
+    void buyChampion();
 };
 
 #endif // SUMMONER_HPP_INCLUDED

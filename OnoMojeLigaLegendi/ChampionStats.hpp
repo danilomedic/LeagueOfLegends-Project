@@ -25,7 +25,7 @@ public:
         critChance = cch;
         attackSpeed = as;
     }
-    ChampionStats(ChampionStats &cs)
+    ChampionStats(const ChampionStats &cs)
     {
         movementSpeed = cs.movementSpeed;
         armor = cs.armor;

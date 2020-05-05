@@ -4,8 +4,8 @@
 class PromoteDemoteSystem
 {
 public:
-    virtual bool promote() = 0;
-    virtual bool demote() = 0;
+    virtual void promote() = 0;
+    virtual void demote() = 0;
 };
 
 #endif // PROMOTEDEMOTESYSTEM_HPP_INCLUDED
