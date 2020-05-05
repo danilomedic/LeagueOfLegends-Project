@@ -5,7 +5,7 @@ class GameStats
 {
 private:
     bool win;
-    int kda[3];
+    int kills, deaths, assists;
     float csPerMin;
     int gold;
 public:
@@ -13,22 +13,68 @@ public:
     GameStats(bool w, int k, int d, int a, float cs, int g)
     {
         win = w;
-        kda[0] = k;
-        kda[1] = d;
-        kda[2] = a;
+        kills = k;
+        deaths = d;
+        assists = a;
         csPerMin = cs;
         gold = g;
     }
     GameStats(const GameStats &gs)
     {
         win = gs.win;
-        kda[0] = gs.kda[0];
-        kda[1] = gs.kda[1];
-        kda[2] = gs.kda[2];
+        kills = gs.kills;
+        deaths = gs.deaths;
+        assists = gs.assists;
         csPerMin = gs.csPerMin;
         gold = gs.gold;
     }
     ~GameStats(){}
+    ///----------------- GET:
+    bool getWin() const
+    {
+        return win;
+    }
+    int getKills() const
+    {
+        return kills;
+    }
+    int getDeaths() const
+    {
+        return deaths;
+    }
+    int getAssists() const
+    {
+        return assists;
+    }
+    float getCS() const
+    {
+        return csPerMin;
+    }
+    int getGold() const
+    {
+        return gold;
+    }
+    ///----------------- SET:
+    void setKills(const int a)
+    {
+        kills = a;
+    }
+    void setDeaths(const int a)
+    {
+        deaths = a;
+    }
+    void setAssists(const int a)
+    {
+        assists = a;
+    }
+    void setCS(const float a)
+    {
+        csPerMin = a;
+    }
+    void setGold(const int a)
+    {
+        gold = a;
+    }
 };
 
 #endif // GAMESTATS_HPP_INCLUDED

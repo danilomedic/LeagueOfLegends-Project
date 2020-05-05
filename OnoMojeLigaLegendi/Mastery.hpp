@@ -30,8 +30,38 @@ public:
         stats = m.stats;
     }
     ~Mastery(){}
-    bool upgradeLevel();
-    bool playGame(); /// +1 na listu, novi prosek, +1000 poena if win
+    void avarage()
+    {
+        int Uwins = 0;
+        int Ukills = 0, Udeaths = 0, Uassists= 0;
+        float UcsPerMin= 0;
+        int Ugold= 0;
+        GameStats gs;
+        for(int i = 1; i != stats.size(); ++i)
+        {
+            stats.read(i, gs);
+            if(gs.getWin())
+            {
+                Uwins++;
+            }
+            Ukills += gs.getKills();
+            Udeaths += gs.getDeaths();
+            Uassists += gs.getAssists();
+            UcsPerMin += gs.getCS();
+            Ugold += gs.getGold();
+        }
+        avgStats.setKills(Ukills / stats.size());
+        avgStats.setDeaths(Udeaths / stats.size());
+        avgStats.setAssists(Uassists / stats.size());
+        avgStats.setCS(UcsPerMin / stats.size());
+        avgStats.setGold(Ugold / stats.size());
+        winrate = (Uwins * 100) / stats.size();
+    }
+    void playGame(GameStats &stat)
+    {
+        stats.add(stats.size() + 1, stat);
+        avarage();
+    }
 };
 
 #endif // MASTERY_HPP_INCLUDED
