@@ -15,7 +15,7 @@ private:
     List<GameStats> stats;
 public:
     Mastery(){}
-    Mastery(Champion c, int lvl, int pt, float wr, GameStats avg, List<GameStats> s) : champ(c), avgStats(avg)
+    Mastery(Champion c, int lvl, int pt, float wr, GameStats avg, List<GameStats> &s) : champ(c), avgStats(avg)
     {
         level = lvl;
         points = pt;
@@ -61,6 +61,16 @@ public:
     {
         stats.add(stats.size() + 1, stat);
         avarage();
+    }
+    Mastery& operator=(const Mastery& m)
+    {
+        avgStats = m.avgStats;
+        champ = m.champ;
+        level = m.level;
+        points = m.points;
+        winrate = m.winrate;
+        stats = m.stats;
+        return *this;
     }
 };
 

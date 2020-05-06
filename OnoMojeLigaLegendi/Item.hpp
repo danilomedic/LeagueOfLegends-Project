@@ -20,7 +20,7 @@ private:
     int price;
 public:
     Item() {}
-    Item(DinString name, int num, List<DinString> l, DinString n, ItemType t, bool a, int p) : gamemode(name, num, l)
+    Item(Map m, DinString n, ItemType t, bool a, int p) : gamemode(m)
     {
         name = n;
         type = t;

@@ -24,7 +24,7 @@ public:
         BE = c.BE;
     }
     ~Currencies(){}
-    void spend(int spender)
+    bool spend(int spender)
     {
         cout << "Stanje: " << BE << "BE, " << RP << "RP." << endl;
         int option;
@@ -43,19 +43,58 @@ public:
         {
             case 1:
                 if(BE > spender)
+                {
                     BE -= spender;
+                    return true;
+                }
                 else
+                {
                     cout << "Nemate dovoljno Blue Essence za ovu kupovinu!" << endl;
+                    return false;
+                }
                 break;
             case 2:
                 if(RP > spender)
+                {
                     RP -= spender;
+                    return true;
+                }
                 else
+                {
                     cout << "Nemate dovoljno Riot Points za ovu kupovinu!" << endl;
+                    return false;
+                }
                 break;
             case 3:
-                return;
+                return false;
         }
+    }
+    ///----------------- GET:
+    int getRP()
+    {
+        return RP;
+    }
+    int getBE()
+    {
+        return BE;
+    }
+    ///----------------- SET:
+    void setRP(int rp)
+    {
+        RP = rp;
+    }
+    void setBE(int be)
+    {
+        BE = be;
+    }
+    ///----------------- ADD:
+    void addRP(int rp)
+    {
+        RP += rp;
+    }
+    void addBE(int be)
+    {
+        BE += be;
     }
 };
 

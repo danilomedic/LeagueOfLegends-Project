@@ -2,6 +2,7 @@
 #define CLUB_HPP_INCLUDED
 #include "dinstring.hpp"
 #include "PromoteDemoteSystem.hpp"
+#include "Friend.hpp"
 
 enum ClubRank{MEMBER, OFFICER, OWNER};
 

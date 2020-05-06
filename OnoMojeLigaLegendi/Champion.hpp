@@ -23,7 +23,7 @@ private:
     List<Skin> skins;
 public:
     Champion(){}
-    Champion(DinString Name, int CenaBE, int CenaRP, int indexRunetera, Role Role, List<Ability> Abilities, List<Skin> &Skins, int ms, int arm, int mr, int ap, int ad, int hp, int m, int cdr, int cch, float as) : role(Role)
+    Champion(DinString Name, int CenaBE, int CenaRP, int indexRunetera, Role Role, List<Ability> &Abilities, List<Skin> &Skins, int ms, int arm, int mr, int ap, int ad, int hp, int m, int cdr, int cch, float as) : role(Role)
     {
         movementSpeed = ms;
         armor = arm;
@@ -217,6 +217,27 @@ public:
                 attackSpeed -= amount;
                 break;
         }
+    }
+    Champion& operator=(const Champion& c)
+    {
+        role = c.role;
+        movementSpeed = c.movementSpeed;
+        armor = c.armor;
+        magicResist = c.magicResist;
+        AP = c.AP;
+        AD = c.AD;
+        health = c.health;
+        mana = c.mana;
+        cooldownReduction = c.cooldownReduction;
+        critChance = c.critChance;
+        attackSpeed = c.attackSpeed;
+        name = c.name;
+        cenaBE = c.cenaBE;
+        cenaRP = c.cenaRP;
+        runetera = c.runetera;
+        abilities = c.abilities;
+        skins = c.skins;
+        return *this;
     }
 };
 
