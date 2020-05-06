@@ -3,7 +3,7 @@
 #include "dinstring.hpp"
 #include "PromoteDemoteSystem.hpp"
 
-enum Division{IRON, BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER, GRANDMASTER, CHALLENGER};
+enum Division {IRON, BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER, GRANDMASTER, CHALLENGER};
 
 class Ranked : public PromoteDemoteSystem
 {
@@ -13,7 +13,7 @@ private:
     int LP;
     int MMR;
 public:
-    Ranked(){}
+    Ranked() {}
     Ranked(Division s, int divN, int lp, int mmr)
     {
         shield = s;
@@ -28,7 +28,7 @@ public:
         LP = r.LP;
         MMR = r.MMR;
     }
-    ~Ranked(){}
+    ~Ranked() {}
     void promote()
     {
         if(divisionNum == 1)
@@ -53,6 +53,41 @@ public:
         else
             divisionNum++;
     }
+    ///----------------- GET:
+    int getShield()const
+    {
+        return shield;
+    }
+    int getDivisionNum()const
+    {
+        return divisionNum;
+    }
+    int getLP()const
+    {
+        return LP;
+    }
+    int getMMR()const
+    {
+        return MMR;
+    }
+    ///----------------- SET:
+    void setShield(const Division a)
+    {
+        shield = a;
+    }
+    void setDivisionNum(const int a)
+    {
+        divisionNum = a;
+    }
+    void setLP(const int a)
+    {
+        LP = a;
+    }
+    void setMMR(const int a)
+    {
+        MMR = a;
+    }
+    ///----------------- SET:
 };
 
 #endif // RANKED_HPP_INCLUDED

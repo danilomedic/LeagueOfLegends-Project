@@ -14,7 +14,7 @@ private:
     GameStats avgStats;
     List<GameStats> stats;
 public:
-    Mastery(){}
+    Mastery() {}
     Mastery(Champion c, int lvl, int pt, float wr, GameStats avg, List<GameStats> &s) : champ(c), avgStats(avg)
     {
         level = lvl;
@@ -29,7 +29,7 @@ public:
         winrate = m.winrate;
         stats = m.stats;
     }
-    ~Mastery(){}
+    ~Mastery() {}
     void avarage()
     {
         int Uwins = 0;
@@ -37,7 +37,7 @@ public:
         float UcsPerMin= 0;
         int Ugold= 0;
         GameStats gs;
-        for(int i = 1; i != stats.size(); ++i)
+        for(int i = 1; i <= stats.size(); ++i)
         {
             stats.read(i, gs);
             if(gs.getWin())
@@ -71,6 +71,48 @@ public:
         winrate = m.winrate;
         stats = m.stats;
         return *this;
+    }
+    ///----------------- GET:
+    int getLevel()const
+    {
+        return level;
+    }
+    int getPoints()const
+    {
+        return points;
+    }
+    float getWinrate()const
+    {
+        return winrate;
+    }
+    List<GameStats> getStats()const
+    {
+        return stats;
+    }
+    ///----------------- SET:
+    void setLevel(const int l)
+    {
+        level = l;
+    }
+    void setPoints(const int p)
+    {
+        points = p;
+    }
+    void setWinrate(const float wr)
+    {
+        winrate = wr;
+    }
+    void setStats(const List<GameStats> gs)
+    {
+        stats = gs;
+    }
+    friend ostream& operator << (ostream &out, Mastery &m)
+    {
+        out << "******************************************************" << endl;
+        out << "FAVOURITE CHAMPION" << endl;
+        out << "Level " << m.getLevel() << " " << m.champ.getName() << " with " << m.getPoints() << " points" << endl;
+        out << "Win ratio: " << m.getWinrate() << "%" << endl;
+        return out;
     }
 };
 

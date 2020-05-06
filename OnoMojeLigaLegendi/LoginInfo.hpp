@@ -2,7 +2,7 @@
 #define LOGININFO_HPP_INCLUDED
 #include "dinstring.hpp"
 
-enum Server{EUNE, EUWEST, NA, BRAZIL, TURKEY, LATIN_AMERICA, OCEANIA, RUSSIA, JAPAN, KOREA};
+enum Server {EUNE, EUWEST, NA, BRAZIL, TURKEY, LATIN_AMERICA, OCEANIA, RUSSIA, JAPAN, KOREA};
 
 class LoginInfo
 {
@@ -12,7 +12,7 @@ protected:
     DinString language;
     Server server;
 public:
-    LoginInfo(){}
+    LoginInfo() {}
     LoginInfo(DinString u, DinString p, DinString l, Server s)
     {
         username = u;
@@ -27,7 +27,7 @@ public:
         language = li.language;
         server = li.server;
     }
-    ~LoginInfo(){}
+    ~LoginInfo() {}
     bool passwordStrength()
     {
         int counter = 0;
@@ -52,6 +52,40 @@ public:
             }
         }
         return false;
+    }
+    ///----------------- GET:
+    DinString getUsername() const
+    {
+        return username;
+    }
+    DinString getPassword() const
+    {
+        return password;
+    }
+    DinString getLanguage() const
+    {
+        return language;
+    }
+    int getServer() const
+    {
+        return server;
+    }
+    ///----------------- SET:
+    void setUsername(const DinString a)
+    {
+        username = a;
+    }
+    void setPassword(const DinString a)
+    {
+        password = a;
+    }
+    void setLanguage(const DinString a)
+    {
+        language = a;
+    }
+    void setServer(const Server s)
+    {
+        server = s;
     }
 };
 

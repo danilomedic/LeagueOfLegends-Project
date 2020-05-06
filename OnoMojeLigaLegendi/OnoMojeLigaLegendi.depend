@@ -8,10 +8,10 @@
 1588624637 source:c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\dinstring.cpp
 	"dinstring.hpp"
 
-1588624637 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\dinstring.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\dinstring.hpp
 	<iostream>
 
-1588541272 source:c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\main.cpp
+1588801471 source:c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\main.cpp
 	<iostream>
 	"dinstring.hpp"
 	"list.hpp"
@@ -25,17 +25,17 @@
 	<stdlib.h>
 	<iostream>
 
-1588542304 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\map.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\map.hpp
 	"dinstring.hpp"
 
-1588783555 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\item.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\item.hpp
 	"Map.hpp"
 	"dinstring.hpp"
 
-1588705299 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\summonerspell.hpp
+1588799232 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\summonerspell.hpp
 	"dinstring.hpp"
 
-1588788884 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\summoner.hpp
+1588801710 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\summoner.hpp
 	"dinstring.hpp"
 	"list.hpp"
 	"Role.hpp"
@@ -48,15 +48,15 @@
 	"Currencies.hpp"
 	"Crafting.hpp"
 
-1588714364 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\role.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\role.hpp
 	"dinstring.hpp"
 
-1588786489 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\mastery.hpp
+1588801349 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\mastery.hpp
 	"list.hpp"
 	"Champion.hpp"
 	"GameStats.hpp"
 
-1588786028 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\champion.hpp
+1588801770 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\champion.hpp
 	"dinstring.hpp"
 	"list.hpp"
 	"ChampionStats.hpp"
@@ -64,38 +64,38 @@
 	"Skin.hpp"
 	"Role.hpp"
 
-1588687430 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\championstats.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\championstats.hpp
 
-1588687429 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\ability.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\ability.hpp
 	"dinstring.hpp"
 
-1588705298 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\skin.hpp
+1588801710 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\skin.hpp
 	"dinstring.hpp"
 
-1588713265 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\gamestats.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\gamestats.hpp
 
-1588714606 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\runes.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\runes.hpp
 	"dinstring.hpp"
 
-1588705299 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\logininfo.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\logininfo.hpp
 	"dinstring.hpp"
 
-1588784926 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\club.hpp
+1588801451 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\club.hpp
 	"dinstring.hpp"
 	"PromoteDemoteSystem.hpp"
 	"Friend.hpp"
 
 1588678237 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\promotedemotesystem.hpp
 
-1588704846 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\ranked.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\ranked.hpp
 	"dinstring.hpp"
 	"PromoteDemoteSystem.hpp"
 
-1588704964 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\friend.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\friend.hpp
 	"dinstring.hpp"
 
-1588787898 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\currencies.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\currencies.hpp
 
-1588687430 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\crafting.hpp
+1588798985 c:\users\malem\onedrive\desktop\github\leagueoflegends-project\onomojeligalegendi\crafting.hpp
 	<cmath>
 

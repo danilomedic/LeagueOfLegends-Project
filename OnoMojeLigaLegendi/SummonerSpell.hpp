@@ -9,7 +9,7 @@ private:
     char key; /// (D ili F)
     int cooldown;
 public:
-    SummonerSpell(){}
+    SummonerSpell() {}
     SummonerSpell(DinString n, char k, int cd)
     {
         if(k != 'F' && k != 'D')
@@ -24,13 +24,39 @@ public:
         name = s.name;
         cooldown = s.cooldown;
     }
-    ~SummonerSpell(){}
+    ~SummonerSpell() {}
     void swapBiding()
     {
         if(key == 'D')
             key = 'F';
         if(key == 'F')
             key = 'D';
+    }
+    ///----------------- GET:
+    DinString getName()const
+    {
+        return name;
+    }
+    char getKey()const
+    {
+        return key;
+    }
+    int getCooldown()const
+    {
+        return cooldown;
+    }
+    ///----------------- SET:
+    void setName(const DinString a)
+    {
+        name = a;
+    }
+    void setKey(const char a)
+    {
+        key = a;
+    }
+    void setCooldown(const int a)
+    {
+        cooldown = a;
     }
 };
 

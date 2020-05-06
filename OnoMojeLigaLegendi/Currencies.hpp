@@ -23,7 +23,7 @@ public:
         RP = c.RP;
         BE = c.BE;
     }
-    ~Currencies(){}
+    ~Currencies() {}
     bool spend(int spender)
     {
         cout << "Stanje: " << BE << "BE, " << RP << "RP." << endl;
@@ -41,58 +41,58 @@ public:
         while(option < 1 || option > 2);
         switch(option)
         {
-            case 1:
-                if(BE > spender)
-                {
-                    BE -= spender;
-                    return true;
-                }
-                else
-                {
-                    cout << "Nemate dovoljno Blue Essence za ovu kupovinu!" << endl;
-                    return false;
-                }
-                break;
-            case 2:
-                if(RP > spender)
-                {
-                    RP -= spender;
-                    return true;
-                }
-                else
-                {
-                    cout << "Nemate dovoljno Riot Points za ovu kupovinu!" << endl;
-                    return false;
-                }
-                break;
-            case 3:
+        case 1:
+            if(BE > spender)
+            {
+                BE -= spender;
+                return true;
+            }
+            else
+            {
+                cout << "Nemate dovoljno Blue Essence za ovu kupovinu!" << endl;
                 return false;
+            }
+            break;
+        case 2:
+            if(RP > spender)
+            {
+                RP -= spender;
+                return true;
+            }
+            else
+            {
+                cout << "Nemate dovoljno Riot Points za ovu kupovinu!" << endl;
+                return false;
+            }
+            break;
+        case 3:
+            return false;
         }
     }
     ///----------------- GET:
-    int getRP()
+    int getRP() const
     {
         return RP;
     }
-    int getBE()
+    int getBE() const
     {
         return BE;
     }
     ///----------------- SET:
-    void setRP(int rp)
+    void setRP(const int rp)
     {
         RP = rp;
     }
-    void setBE(int be)
+    void setBE(const int be)
     {
         BE = be;
     }
     ///----------------- ADD:
-    void addRP(int rp)
+    void addRP(const int rp)
     {
         RP += rp;
     }
-    void addBE(int be)
+    void addBE(const int be)
     {
         BE += be;
     }

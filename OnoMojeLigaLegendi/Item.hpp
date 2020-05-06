@@ -34,7 +34,41 @@ public:
         active = i.active;
         price = i.price;
     }
-    ~Item(){}
+    ~Item() {}
+    ///----------------- GET:
+    DinString getName()const
+    {
+        return name;
+    }
+    int getType()const
+    {
+        return type;
+    }
+    bool getActive()const
+    {
+        return active;
+    }
+    int getPrice()const
+    {
+        return price;
+    }
+    ///----------------- SET:
+    void setName(const DinString n)
+    {
+        name = n;
+    }
+    void setType(const ItemType a)
+    {
+        type = a;
+    }
+    void setActive(const bool a)
+    {
+        active = a;
+    }
+    void setPrice(const int a)
+    {
+        price = a;
+    }
 };
 
 

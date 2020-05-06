@@ -9,7 +9,7 @@ private:
     float csPerMin;
     int gold;
 public:
-    GameStats(){}
+    GameStats() {}
     GameStats(bool w, int k, int d, int a, float cs, int g)
     {
         win = w;
@@ -28,7 +28,7 @@ public:
         csPerMin = gs.csPerMin;
         gold = gs.gold;
     }
-    ~GameStats(){}
+    ~GameStats() {}
     ///----------------- GET:
     bool getWin() const
     {

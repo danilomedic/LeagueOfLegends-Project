@@ -9,7 +9,7 @@ private:
     int numPlayers;
     List<DinString> lanes;
 public:
-    Map(){}
+    Map() {}
     Map(DinString n, int nP, List<DinString> &l)
     {
         name = n;
@@ -22,7 +22,33 @@ public:
         numPlayers = m.numPlayers;
         lanes = m.lanes;
     }
-    ~Map(){}
+    ~Map() {}
+    ///----------------- GET:
+    DinString getName() const
+    {
+        return name;
+    }
+    int getNumPlayers() const
+    {
+        return numPlayers;
+    }
+    List<DinString> getLanes() const
+    {
+        return lanes;
+    }
+    ///----------------- SET:
+    void setName(const DinString n)
+    {
+        name = n;
+    }
+    void setNumPlayers(const int n)
+    {
+        numPlayers = n;
+    }
+    void setLanes(const List<DinString> l)
+    {
+        lanes = l;
+    }
 };
 
 #endif // MAP_HPP_INCLUDED

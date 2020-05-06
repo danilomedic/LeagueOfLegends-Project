@@ -16,7 +16,7 @@ private:
     };
     DinString lane;
 public:
-    Role(){}
+    Role() {}
     Role(int indexP, int indexL)
     {
         playstyle = Playstyle[indexP];
@@ -27,7 +27,7 @@ public:
         playstyle = r.playstyle;
         lane = r.lane;
     }
-    ~Role(){}
+    ~Role() {}
     void swapLane()
     {
         int l;
@@ -67,6 +67,24 @@ public:
             cout << "Vas trenutni lane je " << lane << ", pomerate se na " << Lane[l - 1] << endl;
             lane = Lane[l - 1];
         }
+    }
+    ///----------------- GET:
+    DinString getPlaystyle()const
+    {
+        return playstyle;
+    }
+    DinString getLane()const
+    {
+        return lane;
+    }
+    ///----------------- SET:
+    void getPlaystyle(const DinString d)
+    {
+        playstyle = d;
+    }
+    void getLane(const DinString d)
+    {
+        lane = d;
     }
 };
 

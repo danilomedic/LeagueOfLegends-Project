@@ -31,7 +31,7 @@ public:
         orangeEssence = c.orangeEssence;
         skins = c.skins;
     }
-    ~Crafting(){}
+    ~Crafting() {}
     void buySkin()
     {
         if(skins == 0)
@@ -79,6 +79,48 @@ public:
         }
         else
             cout << "Nemate dovoljno fragmenta!" << endl;
+    }
+    ///----------------- GET:
+    int getBox()const
+    {
+        return box;
+    }
+    int getKey()const
+    {
+        return key;
+    }
+    int getKeyFrag()const
+    {
+        return keyFrag;
+    }
+    int getOrangeEssence()const
+    {
+        return orangeEssence;
+    }
+    int getSkins()const
+    {
+        return skins;
+    }
+    ///----------------- SET:
+    void setBox(const int a)
+    {
+        box = a;
+    }
+    void setKey(const int a)
+    {
+        key = a;
+    }
+    void setKeyFrag(const int a)
+    {
+        keyFrag = a;
+    }
+    void setOrangeEssence(const int a)
+    {
+        orangeEssence = a;
+    }
+    void setSkins(const int a)
+    {
+        skins = a;
     }
 };
 

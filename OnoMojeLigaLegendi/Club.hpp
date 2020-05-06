@@ -4,7 +4,7 @@
 #include "PromoteDemoteSystem.hpp"
 #include "Friend.hpp"
 
-enum ClubRank{MEMBER, OFFICER, OWNER};
+enum ClubRank {MEMBER, OFFICER, OWNER};
 
 class Club : public PromoteDemoteSystem
 {
@@ -14,7 +14,7 @@ private:
     int numMembers;
     ClubRank role;
 public:
-    Club(){}
+    Club() {}
     Club(DinString n, DinString t, int nM, ClubRank r)
     {
         name = n;
@@ -29,7 +29,7 @@ public:
         numMembers = cr.numMembers;
         role = cr.role;
     }
-    ~Club(){}
+    ~Club() {}
     void promote()
     {
         if(role == MEMBER)
@@ -50,6 +50,53 @@ public:
         {
             role = OWNER;
         }
+    }
+    ///----------------- GET:
+    DinString getName()const
+    {
+        return name;
+    }
+    DinString getTag()const
+    {
+        return tag;
+    }
+    int getNumMembers()const
+    {
+        return numMembers;
+    }
+    int getRole()const
+    {
+        return role;
+    }
+    ///----------------- SET:
+    void setName(const DinString n)
+    {
+        name = n;
+    }
+    void setTag(const DinString n)
+    {
+        tag = n;
+    }
+    void setNumMembers(const int a)
+    {
+        numMembers = a;
+    }
+    void setRole(const ClubRank r)
+    {
+        role = r;
+    }
+    friend ostream& operator << (ostream &out, Club &c)
+    {
+        out << "******************************************************" << endl;
+        out << "CLUB" << endl;
+        out << "Name: " << c.getName() << " (" << c.getTag() << ")" << endl;
+        switch(c.getRole())
+        {
+            case 0: out << c.getNumMembers() << " members, your role is: MEMBER" << endl; break;
+            case 1: out << c.getNumMembers() << " members, your role is: OFFICER" << endl; break;
+            case 2: out << c.getNumMembers() << " members, your role is: OWNER" << endl; break;
+        }
+        return out;
     }
 };
 
