@@ -328,7 +328,7 @@ public:
         out << "******************************************************" << endl;
         out << "CHAMPION" << endl;
         out << "Name: " << c.getName() << " (BE: " << c.getPriceBE() << ", RP: " << c.getPriceRP() << ")" << endl;
-        out << "Dolazi iz " << c.getRunetera() << " i playstyle mu je " << c.role.getPlaystyle() << ", igra se na" << c.role.getLane() << endl;
+        out << "Dolazi iz " << c.getRunetera() << " i playstyle mu je " << c.role.getPlaystyle() << ", igra se na " << c.role.getLane() << endl;
         c.listSkins();
         c.listAbilities();
         return out;

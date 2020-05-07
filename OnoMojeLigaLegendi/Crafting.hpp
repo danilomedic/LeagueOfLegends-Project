@@ -122,6 +122,15 @@ public:
     {
         skins = a;
     }
+    Crafting& operator= (Crafting& c)
+    {
+        box = c.box;
+        key = c.key;
+        keyFrag = c.keyFrag;
+        orangeEssence = c.orangeEssence;
+        skins = c.skins;
+        return *this;
+    }
 };
 
 #endif // CRAFTING_HPP_INCLUDED

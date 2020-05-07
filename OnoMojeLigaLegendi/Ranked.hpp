@@ -87,7 +87,14 @@ public:
     {
         MMR = a;
     }
-    ///----------------- SET:
+    Ranked& operator= (Ranked& r)
+    {
+        shield = r.shield;
+        divisionNum = r.divisionNum;
+        LP = r.LP;
+        MMR = r.MMR;
+        return *this;
+    }
 };
 
 #endif // RANKED_HPP_INCLUDED

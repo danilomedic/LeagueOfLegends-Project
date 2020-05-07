@@ -30,8 +30,12 @@ private:
     List<RunePage> runes;
 public:
     Summoner() {}
-    Summoner(DinString sN, int lvl, int ch, int hon, Role mPR, Currencies m, Crafting c, Ranked f, Ranked s, List<Club> &cc, List<Mastery> &mm, List<Friend> &fL, List<RunePage> &rp) : mostPlayedRole(mPR), money(m), materials(c), flex(f), soloduo(s)
+    Summoner(DinString ausername, DinString apassword, DinString alanguage, Server aserver, DinString sN, int lvl, int ch, int hon, Role mPR, Currencies m, Crafting c, Ranked f, Ranked s, List<Club> &cc, List<Mastery> &mm, List<Friend> &fL, List<RunePage> &rp) : mostPlayedRole(mPR), money(m), materials(c), flex(f), soloduo(s)
     {
+        username = ausername;
+        password = apassword;
+        language = alanguage;
+        server = aserver;
         summName = sN;
         summLevel = lvl;
         ownedChamps = ch;
@@ -43,6 +47,10 @@ public:
     }
     Summoner(const Summoner &s) : mostPlayedRole(s.mostPlayedRole), money(s.money), materials(s.materials), flex(s.flex), soloduo(s.soloduo)
     {
+        username = s.username;
+        password = s.password;
+        language = s.language;
+        server = s.server;
         summName = s.summName;
         summLevel = s.summLevel;
         ownedChamps = s.ownedChamps;
@@ -264,12 +272,98 @@ public:
         out << "Box: " << s.materials.getBox() << " Key: " << s.materials.getKey() << " KeyFragments: " << s.materials.getKeyFrag() << " OrangeEssence: " << s.materials.getOrangeEssence() << endl;
         out << "******************************************************" << endl;
         out << "RANKED" << endl;
-        out << "SoloDuo: " << s.soloduo.getShield() << " " << s.soloduo.getDivisionNum() << " Flex: " << s.flex.getShield() << " " << s.flex.getDivisionNum() << endl;
+        out << "SoloDuo: ";
+        switch(s.soloduo.getShield())
+        {
+            case 0: out << "Iron "; break;
+            case 1: out << "Bronze "; break;
+            case 2: out << "Silver "; break;
+            case 3: out << "Gold "; break;
+            case 4: out << "Platinum "; break;
+            case 5: out << "Diamond "; break;
+            case 6: out << "Master "; break;
+            case 7: out << "Grandmaster "; break;
+            case 8: out << "Challenger "; break;
+        }
+        out << s.soloduo.getDivisionNum() << " Flex: ";
+        switch(s.flex.getShield())
+        {
+            case 0: out << "Iron "; break;
+            case 1: out << "Bronze "; break;
+            case 2: out << "Silver "; break;
+            case 3: out << "Gold "; break;
+            case 4: out << "Platinum "; break;
+            case 5: out << "Diamond "; break;
+            case 6: out << "Master "; break;
+            case 7: out << "Grandmaster "; break;
+            case 8: out << "Challenger "; break;
+        }
+        out << s.flex.getDivisionNum() << endl;
         s.listClubs();
         s.listFriendList();
         s.listFavouriteChampions();
         s.listRunePages();
         return out;
+    }
+    Summoner& operator= (Summoner& s)
+    {
+        summName = s.summName;
+        summLevel = s.summLevel;
+        ownedChamps = s.ownedChamps;
+        honorLevel = s.honorLevel;
+        mostPlayedRole = s.mostPlayedRole;
+        money = s.money;
+        materials = s.materials;
+        flex = s.flex;
+        soloduo = s.soloduo;
+        clubs = s.clubs;
+        favChamps = s.favChamps;
+        friendList = s.friendList;
+        runes = s.runes;
+        return *this;
+    }
+    friend bool operator== (Summoner& s1, Summoner &s2)
+    {
+        if(
+           s1.getUsername() != s2.getUsername() ||
+           s1.getPassword() != s2.getPassword() ||
+           s1.getSummName() != s2.getSummName() ||
+           s1.getSummLevel() != s2.getSummLevel() ||
+           s1.getOwnedChamps() != s2.getOwnedChamps() ||
+           s1.getHonorLevel() != s2.getHonorLevel() ||
+           s1.money.getBE() != s2.money.getBE() ||
+           s1.money.getRP() != s2.money.getRP() ||
+           s1.mostPlayedRole.getLane() != s2.mostPlayedRole.getLane() ||
+           s1.mostPlayedRole.getPlaystyle() != s2.mostPlayedRole.getPlaystyle() ||
+           s1.flex.getShield() != s2.flex.getShield() ||
+           s1.flex.getDivisionNum() != s2.flex.getDivisionNum() ||
+           s1.soloduo.getShield() != s2.soloduo.getShield() ||
+           s1.soloduo.getDivisionNum() != s2.soloduo.getDivisionNum()
+           )
+            return false;
+        else
+            return true;
+    }
+    friend bool operator!= (Summoner& s1, Summoner &s2)
+    {
+        if(s1 == s2)
+            return false;
+        else
+            return true;
+    }
+    friend bool operator> (Summoner& s1, Summoner &s2)
+    {
+        if(s1.getSummLevel() > s2.getSummLevel())
+            return true;
+        else
+            return false;
+    }
+    friend bool operator< (Summoner& s1, Summoner &s2)
+    {
+        if(s1.getSummLevel() < s2.getSummLevel())
+            return true;
+        else
+            return false;
     }
 };
 

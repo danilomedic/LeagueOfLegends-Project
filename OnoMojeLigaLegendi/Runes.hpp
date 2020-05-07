@@ -137,15 +137,30 @@ private:
     Secondary leftSide;
 public:
     RunePage() {}
-    RunePage(RuneType t, RuneType tt, int f1, int f2, int f3, int ff1, int ff2, DinString r) : rightSide(t, f1, f2, f3, r), leftSide(tt, ff1, ff2) {}
+    RunePage(Primary p, Secondary s) : rightSide(p), leftSide(s){}
     RunePage(const RunePage &rp) : rightSide(rp.rightSide), leftSide(rp.leftSide) {}
     ~RunePage() {}
     friend ostream& operator << (ostream &out, RunePage &r)
     {
         out << "******************************************************" << endl;
-        out << "RUNE PAGE" << endl;
-        out << "PRIMARY: " << r.rightSide.getType() << ", " << r.rightSide.getRune() << endl;
-        out << "SECONDARY: " << r.leftSide.getType() << endl;
+        out << "RUNE PAGE" << endl << "Primary - ";
+        switch(r.rightSide.getType())
+        {
+            case 0: out << "Sorcery, "; break;
+            case 1: out << "Domination, "; break;
+            case 2: out << "Inspiration, "; break;
+            case 3: out << "Resolve, "; break;
+            case 4: out << "Precision, "; break;
+        }
+        out << r.rightSide.getRune() << endl << "Secondary - ";
+        switch(r.leftSide.getType())
+        {
+            case 0: out << "Sorcery" << endl; break;
+            case 1: out << "Domination" << endl; break;
+            case 2: out << "Inspiration" << endl; break;
+            case 3: out << "Resolve" << endl; break;
+            case 4: out << "Precision" << endl; break;
+        }
         return out;
     }
 };
