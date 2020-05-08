@@ -2,15 +2,16 @@
 #define SKIN_HPP_INCLUDED
 #include "dinstring.hpp"
 
+DinString SkinRarity[6]
+    {
+        "COMMON", "RARE", "EPIC", "LEGENDARY", "ULTIMATE", "MYTHIC"
+    };
+
 class Skin
 {
 private:
     DinString name;
     int price;
-    DinString SkinRarity[6]
-    {
-        "COMMON", "RARE", "EPIC", "LEGENDARY", "ULTIMATE", "MYTHIC"
-    };
     DinString skinRarity;
     bool legacy;
 public:

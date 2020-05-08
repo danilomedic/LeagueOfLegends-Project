@@ -1,9 +1,6 @@
 #ifndef RUNES_HPP_INCLUDED
 #define RUNES_HPP_INCLUDED
 #include "dinstring.hpp"
-#define POLJA_1 3
-#define POLJA_2 2
-
 
 enum RuneType
 {

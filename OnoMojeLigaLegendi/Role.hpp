@@ -2,18 +2,20 @@
 #define ROLE_HPP_INCLUDED
 #include "dinstring.hpp"
 
-class Role
-{
-private:
-    DinString Playstyle[6]
+DinString Playstyle[6]
     {
         "ASSASIN", "MAGE", "TANK", "FIGHTER", "SUPPORT", "MARKSMAN"
     };
-    DinString playstyle;
-    DinString Lane[5]
+
+DinString Lane[5]
     {
         "SUPP", "ADC", "MID", "JUNGLE", "TOP"
     };
+
+class Role
+{
+private:
+    DinString playstyle;
     DinString lane;
 public:
     Role() {}

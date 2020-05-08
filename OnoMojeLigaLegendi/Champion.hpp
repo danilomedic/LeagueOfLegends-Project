@@ -7,14 +7,15 @@
 #include "Skin.hpp"
 #include "Role.hpp"
 
-class Champion : public ChampionStats
-{
-private:
-    const DinString Runetera[11]
+const DinString Runetera[11]
     {
         "PILTOVER", "DEMACIA", "NOXUS", "IONIA", "FRELJORD", "TARGON",
         "SHURIMA", "IXTAL", "ZAUN", "BILGEWATER", "SHADOW_ISLES"
     };
+
+class Champion : public ChampionStats
+{
+private:
     DinString runetera;
     DinString name;
     int cenaBE, cenaRP;

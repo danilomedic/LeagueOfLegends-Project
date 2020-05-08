@@ -28,7 +28,8 @@ int main()
 
     ///Item
     Item iprazan();
-    Item i(m, "Infinity Edge", CRIT, false, 3400);
+    Ability Hourglass("Hourglass", 50, 0, '1', ITEM_ABILITY);
+    Item i(m, "Zhonya's", AP, true, 3400, Hourglass);
     Item ikopija(i);
 
     ///Skin
@@ -70,6 +71,7 @@ int main()
     Friend friend3("Lofer", NEVER, false);
     Friend fprazan();
     Friend fkopija(friend1);
+    List<Friend> friendList;
 
     ///Currencies
     Currencies moneyprazan();
@@ -82,8 +84,8 @@ int main()
     Crafting lootkopija(loot);
 
     ///Club
-    Club IMT("Immortals", "IMT", 6, OWNER);
-    Club APKAH("Arkanove komete", "APKAH", 5, MEMBER);
+    Club IMT("Immortals", "IMT", 6, OWNER, friendList);
+    Club APKAH("Arkanove komete", "APKAH", 5, MEMBER, friendList);
     Club clubprazan();
     Club clubkopija(IMT);
 
@@ -132,7 +134,6 @@ int main()
     clubs.add(clubs.size() + 1, APKAH);
     List<Mastery> favChamps;
     favChamps.add(favChamps.size() + 1, mLux);
-    List<Friend> friendList;
     friendList.add(friendList.size() + 1, friend1);
     friendList.add(friendList.size() + 1, friend2);
     friendList.add(friendList.size() + 1, friend3);

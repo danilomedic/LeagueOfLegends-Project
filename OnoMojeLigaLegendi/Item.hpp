@@ -1,6 +1,7 @@
 #ifndef ITEM_HPP_INCLUDED
 #define ITEM_HPP_INCLUDED
 #include "Map.hpp"
+#include "Ability.hpp"
 #include "dinstring.hpp"
 
 enum ItemType
@@ -17,17 +18,18 @@ private:
     DinString name;
     ItemType type;
     bool active;
+    Ability ability;
     int price;
 public:
     Item() {}
-    Item(Map m, DinString n, ItemType t, bool a, int p) : gamemode(m)
+    Item(Map m, DinString n, ItemType t, bool a, int p, Ability aa) : gamemode(m), ability(aa)
     {
         name = n;
         type = t;
         active = a;
         price = p;
     }
-    Item(const Item &i) : gamemode(i.gamemode)
+    Item(const Item &i) : gamemode(i.gamemode), ability(i.ability)
     {
         name = i.name;
         type = i.type;

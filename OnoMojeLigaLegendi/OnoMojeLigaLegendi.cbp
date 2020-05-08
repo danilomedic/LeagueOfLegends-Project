@@ -44,6 +44,8 @@
 		<Unit filename="LoginInfo.hpp" />
 		<Unit filename="Map.hpp" />
 		<Unit filename="Mastery.hpp" />
+		<Unit filename="Match.hpp" />
+		<Unit filename="Player.hpp" />
 		<Unit filename="PromoteDemoteSystem.hpp" />
 		<Unit filename="Ranked.hpp" />
 		<Unit filename="Role.hpp" />

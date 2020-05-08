@@ -12,15 +12,17 @@ private:
     DinString name;
     DinString tag;
     int numMembers;
+    List<Friend> members;
     ClubRank role;
 public:
     Club() {}
-    Club(DinString n, DinString t, int nM, ClubRank r)
+    Club(DinString n, DinString t, int nM, ClubRank r, List<Friend> &m)
     {
         name = n;
         tag = t;
         numMembers = nM;
         role = r;
+        members = m;
     }
     Club(const Club &cr)
     {
@@ -28,6 +30,7 @@ public:
         tag = cr.tag;
         numMembers = cr.numMembers;
         role = cr.role;
+        members = cr.members;
     }
     ~Club() {}
     void promote()

@@ -2,18 +2,19 @@
 #define ABILITY_HPP_INCLUDED
 #include "dinstring.hpp"
 
-enum AbilityType {PASSIVE, DAMAGE, HEAL, CC, MODE_SWAP, SHIELD, DASH};
+enum AbilityType {PASSIVE, DAMAGE, HEAL, CC, MODE_SWAP, SHIELD, DASH, ITEM_ABILITY};
 
 class Ability
 {
 private:
     DinString name;
-    int cooldown, manaCost;
+    float cooldown;
+    int manaCost;
     char key; ///(Q, W, E, R ili P za passive)
     AbilityType type;
 public:
     Ability() {}
-    Ability(DinString n, int cd, int mc, char k, AbilityType t)
+    Ability(DinString n, float cd, int mc, char k, AbilityType t)
     {
         if(k != 'Q' && k != 'W'  && k != 'E'  && k != 'R' &&  k != 'P')
             return;
@@ -37,7 +38,7 @@ public:
     {
         return name;
     }
-    int getCooldown() const
+    float getCooldown() const
     {
         return cooldown;
     }
@@ -58,7 +59,7 @@ public:
     {
         name = n;
     }
-    void setCooldown(const int a)
+    void setCooldown(const float a)
     {
         cooldown = a;
     }
